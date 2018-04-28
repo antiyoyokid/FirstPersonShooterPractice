@@ -169,6 +169,7 @@ void AAttempt1Character::OnFire()
 	}
 
 	// Try and play the sound if specified
+	// Took me a while
 	if (FireSound != NULL)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
