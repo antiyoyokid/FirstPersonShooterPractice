@@ -16,16 +16,17 @@ class ATTEMPT1_API ACube : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ACube();
-	UPROPERTY(EditAnywhere)
-		UStaticMeshComponent* Rock;
+
+	UPROPERTY(EditAnywhere) // Means that this component is editable on the Unreal Engine Editor
+		UStaticMeshComponent* Mesh; // Mesh for the cube
 
 	UPROPERTY(EditAnywhere)
-		UBoxComponent* Cube;
+		UBoxComponent* Cube; // Cube is a box component with built in box physics
 
 	UPROPERTY(EditAnywhere)
-		float cubeSpeed = 0.0f;
+		float cubeSpeed = 0.0f; // Speed setter appears on Unreal Engine
 	UPROPERTY(EditAnywhere)
-		bool movementY = true;
+		bool movementY = true; // Boolean to get either the cube to move in Y direction or X direction
 
 protected:
 	// Called when the game starts or when spawned

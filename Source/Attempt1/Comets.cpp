@@ -17,7 +17,7 @@ AComets::AComets()
 	Sphere->SetSphereRadius(50);
 	
 	
-	Sphere->AttachToComponent(Rock, FAttachmentTransformRules::SnapToTargetIncludingScale);
+	Sphere->AttachToComponent(Rock, FAttachmentTransformRules::SnapToTargetIncludingScale); // Makes mesh component take the shape of Actor
 
 	Sphere->bGenerateOverlapEvents = true;
 	
@@ -34,7 +34,9 @@ AComets::AComets()
 // Called when the game starts or when spawned
 void AComets::BeginPlay()
 {
+
 	/*
+	CODE TO SPAWN NEW ROCKS 
 	Super::BeginPlay();
 	FVector Location(0.0f, 0.0f, 0.0f);
 	FRotator Rotation(0.0f, 0.0f, 0.0f);
@@ -47,6 +49,7 @@ void AComets::BeginPlay()
 void AComets::Tick(float DeltaTime)
 {
 /*
+	CODE TO MOVE ROCK AROUND
 	float randY = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))*1000;
 	float randZ = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
 	float randX = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
@@ -63,7 +66,7 @@ void AComets::Tick(float DeltaTime)
 
 void AComets::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Only add impulse and destroy projectile if we hit a physics
+	// Only add impulse and destroy projectile if we hit a physics, to make destructible mesh
 	
 }
 

@@ -10,23 +10,19 @@ ACube::ACube()
 	PrimaryActorTick.bCanEverTick = true;
 	
 
-	Rock = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComet"));
-	Cube = CreateDefaultSubobject<UBoxComponent>(TEXT("Sphere Shape Created"));
-	Cube->SetBoxExtent(FVector(1, 1, 1)); 
-	//probabably want to set the scale
-	
-	
-
-
-	Cube->AttachToComponent(Rock, FAttachmentTransformRules::SnapToTargetIncludingScale);
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComet"));
+	Cube = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube Shape Created"));
+	Cube->SetBoxExtent(FVector(1.0f, 1.0f, 1.0f)); // Set size of the cube
+		
+	Cube->AttachToComponent(Mesh, FAttachmentTransformRules::SnapToTargetIncludingScale);
 
 	Cube->bGenerateOverlapEvents = true;
 
-
-	auto MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/EngineMeshes/Cube'"));
+	// Gets the mesh from file location
+	auto MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/EngineMeshes/Cube'")); 
 	if (MeshAsset.Object != nullptr)
 	{
-		Rock->SetStaticMesh(MeshAsset.Object);
+		Mesh->SetStaticMesh(MeshAsset.Object);
 	}
 
 
@@ -43,14 +39,16 @@ void ACube::BeginPlay()
 void ACube::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
-	//float randY = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
-	//float randZ = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
-	//float randX = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
+	/*
+	Code to make cube move in random directions if required...
+	float randY = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
+	float randZ = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
+	float randX = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
+	*/
 	Super::Tick(DeltaTime);
-	FVector newLocation = GetActorLocation();
+	FVector newLocation = GetActorLocation(); // Gets cube current location
 	
-	float deltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
+	float deltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime)); // Makes cube fly back and forth
 	if (movementY) {
 		newLocation.Y += deltaHeight * cubeSpeed;
 	}
