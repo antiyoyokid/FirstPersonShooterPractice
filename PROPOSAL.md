@@ -1,5 +1,5 @@
 # Project Proposal
-So, for this project I am planning to use the GoDot engine to create an Android / Windows game where the user has to dodge incoming obstacles falling down on the player. The player will have the option to tilt the screen or press the arrow keys to move the character and dodge the falling objects. The android game will be complete with proper UI, like a main menu and may have elements such as sound. It will also have a total score and that should be the count of the number of objects the user has sucessfully dodged. This is going to require some intense programming. 
+For this project my aim is to create a Shooting Range unsing C++ and UNREAL ENGINE. During the development process, I plan to avoid using BluePrinting and do as much as I can on C++. The idea behind the shooting range is that it will help a lot of people especially gamers not only get better mouse control but also improve their aiming and accuracy. 
 
-And that's about it. 
+I will have moving objects and the player can move around and shoot these objects. The speed of the movement of the objects will also increase over time. The entire game will be a first person shooter. This means that I must have proper player movements with the WASD keys, the ability to look around using the mouse and the ability to shoot when I click the mouse. 
 
