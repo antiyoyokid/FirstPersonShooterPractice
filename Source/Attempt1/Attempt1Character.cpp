@@ -236,8 +236,7 @@ bool AAttempt1Character::EnableTouchscreenMovement(class UInputComponent* Player
 	{
 		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AAttempt1Character::BeginTouch);
 		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AAttempt1Character::EndTouch);
-
-		
+				
 		return true;
 	}
 	

@@ -28,14 +28,16 @@ public:
 	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
+
 	float RunningTime;
 	FVector playerStartPos = FVector(-1561.0f, -100.0f, 235.0f);
 	
 	UPROPERTY(EditAnywhere)
-	UStaticMeshComponent* SphereMesh;
+		UStaticMeshComponent* SphereMesh;
 
 	UPROPERTY(EditAnywhere)
 		USphereComponent* Sphere;
+	
+		
 }
 ;

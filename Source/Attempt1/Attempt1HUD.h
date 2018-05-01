@@ -14,12 +14,11 @@ class AAttempt1HUD : public AHUD
 public:
 	AAttempt1HUD();
 
-	/** Primary draw call for the HUD */
+	// Primary draw call for the HUD 
 	virtual void DrawHUD() override;
 
 private:
-	/** Crosshair asset pointer */
+	// Crosshair asset pointer 
 	class UTexture2D* CrosshairTex;
-
 };
 

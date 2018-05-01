@@ -12,6 +12,7 @@ ACube::ACube()
 	// Sets settings for the Cube Object
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComet"));
 	Cube = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube Shape Created"));
+
 	Cube->SetBoxExtent(FVector(1.0f, 1.0f, 1.0f)); // Set size of the cube
 	Cube->AttachToComponent(Mesh, FAttachmentTransformRules::SnapToTargetIncludingScale);
 	Cube->bGenerateOverlapEvents = true;
@@ -31,8 +32,7 @@ ACube::ACube()
 void ACube::BeginPlay()
 {
 	Super::BeginPlay();
-	
-}
+	}
 
 // Called every frame
 void ACube::Tick(float DeltaTime)
@@ -43,7 +43,7 @@ void ACube::Tick(float DeltaTime)
 	FVector newLocation = GetActorLocation(); // Gets cube current location
 	
 	float deltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime)); // Makes cube fly back and forth
-	int ExtraSpeed = RunningTime * RunningTimeMultiplier;
+	int ExtraSpeed = RunningTime * RunningTimeMultiplier; // More ExtraSpeed based on time
 	
 	if (ExtraSpeed < MaxExtraSpeed) {
 		if (movementY) {
