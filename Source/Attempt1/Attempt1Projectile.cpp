@@ -27,8 +27,8 @@ AAttempt1Projectile::AAttempt1Projectile()
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 
-	// Die after 10 seconds by default
-	InitialLifeSpan = 10.0f;
+	// Destroy projectile after 300 seconnds
+	InitialLifeSpan = 300.0f;
 }
 
 void AAttempt1Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)

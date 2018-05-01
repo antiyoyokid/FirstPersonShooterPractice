@@ -2,55 +2,41 @@
 
 #include "Comets.h"
 
-
-
 // Sets default values
 AComets::AComets()
 {
-	
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	Rock = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComet"));
-	Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere Shape Created"));
-	
-	Sphere->SetSphereRadius(50);
-	
-	
-	Sphere->AttachToComponent(Rock, FAttachmentTransformRules::SnapToTargetIncludingScale); // Makes mesh component take the shape of Actor
+	SphereMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComet"));
 
+	Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere Shape Created"));
+	Sphere->SetSphereRadius(50);
+	Sphere->AttachToComponent(SphereMesh, FAttachmentTransformRules::SnapToTargetIncludingScale); // Makes mesh component take the shape of Actor
 	Sphere->bGenerateOverlapEvents = true;
-	
+
 
 	auto MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/EngineMeshes/Sphere'"));
 	if (MeshAsset.Object != nullptr)
 	{
-		Rock->SetStaticMesh(MeshAsset.Object);
+		SphereMesh->SetStaticMesh(MeshAsset.Object);
 	}
-	
-	
+
 }
 
 // Called when the game starts or when spawned
 void AComets::BeginPlay()
 {
 
-	/*
-	CODE TO SPAWN NEW ROCKS 
-	Super::BeginPlay();
-	FVector Location(0.0f, 0.0f, 0.0f);
-	FRotator Rotation(0.0f, 0.0f, 0.0f);
-	FActorSpawnParameters SpawnInfo;
-	GetWorld()->SpawnActor<AComets>(Location, Rotation, SpawnInfo);
-	*/
 }
 
 // Called every frame
 void AComets::Tick(float DeltaTime)
 {
-/*
-	CODE TO MOVE ROCK AROUND
-	float randY = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))*1000;
+
+
+	float randY = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
 	float randZ = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
 	float randX = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX)) * 1000;
 	Super::Tick(DeltaTime);
@@ -61,14 +47,9 @@ void AComets::Tick(float DeltaTime)
 	newLocation.X += deltaHeight * randX;
 	RunningTime += DeltaTime;
 	SetActorLocation(newLocation);
-	*/
-	}
 
-void AComets::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-	// Only add impulse and destroy projectile if we hit a physics, to make destructible mesh
-	
 }
+
 
 
 

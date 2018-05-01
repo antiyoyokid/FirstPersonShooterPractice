@@ -25,8 +25,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		float cubeSpeed = 0.0f; // Speed setter appears on Unreal Engine
+
 	UPROPERTY(EditAnywhere)
-		bool movementY = true; // Boolean to get either the cube to move in Y direction or X direction
+		bool movementY = true; // Boolean to get either the cube to move in Y direction 
+
+	UPROPERTY(EditAnywhere)
+		bool movementX = true; // Boolean to get either the cube to move in X direction 
+
+	UPROPERTY(EditAnywhere)
+		bool movementZ = true; // Boolean to get either the cube to move in Z direction 
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,6 +43,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	float RunningTime;
+	int RunningTimeMultiplier = 10;
+	int MaxExtraSpeed = 1000;
 
 	
 	

@@ -4,6 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Attempt1Projectile.h"
+#include "Animation/AnimInstance.h"
+#include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/InputComponent.h"
+#include "GameFramework/InputSettings.h"
+#include "HeadMountedDisplayFunctionLibrary.h"
+#include "Kismet/GameplayStatics.h"
+#include "MotionControllerComponent.h"
+#include "XRMotionControllerBase.h"
 #include "Attempt1Character.generated.h"
 
 class UInputComponent;
