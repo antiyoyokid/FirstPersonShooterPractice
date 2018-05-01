@@ -31,3 +31,5 @@ April 25 - 1st
 
 - Finding the correct settings for the camera and ligting and also player movement was not hard BUT very time consuming. I had to read a ton of example projects and look at other projects to realise the tiny settings I had to change to make it perfect. Pretty much a lot of documenation time. This probably took over 35 hours of time to figure out....
 
+Finished at 1st May
+
