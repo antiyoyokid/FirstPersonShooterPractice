@@ -4,13 +4,13 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
-AAttempt1Projectile::AAttempt1Projectile() 
+AAttempt1Projectile::AAttempt1Projectile()
 {
 	// Use a sphere as a simple collision representation
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
 	CollisionComp->InitSphereRadius(5.0f);
 	CollisionComp->BodyInstance.SetCollisionProfileName("Projectile");
-	CollisionComp->OnComponentHit.AddDynamic(this, &AAttempt1Projectile::OnHit);		// Calls OnHit if ball is hit
+	CollisionComp->OnComponentHit.AddDynamic(this, &AAttempt1Projectile::OnHit); // Calls OnHit if ball is hit
 
 	// Players can't walk on it
 	CollisionComp->SetWalkableSlopeOverride(FWalkableSlopeOverride(WalkableSlope_Unwalkable, 0.f));

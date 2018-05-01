@@ -1,6 +1,6 @@
 
 #include "Attempt1Character.h"
- 
+
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -47,7 +47,7 @@ AAttempt1Character::AAttempt1Character()
 	GunOffset = FVector(100.0f, 0.0f, 10.0f);
 
 	// The ProjectileClass and the skeletal mesh/anim blueprints for Mesh1P, FP_Gun, and VR_Gun 
-	
+
 
 	// Create Controllers
 
@@ -77,7 +77,7 @@ void AAttempt1Character::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
-	
+
 	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
 	FP_Gun->AttachToComponent(Mesh1P, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
 
@@ -109,7 +109,7 @@ void AAttempt1Character::SetupPlayerInputComponent(class UInputComponent* Player
 	// Bind fire event
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AAttempt1Character::OnFire);
 
-	
+
 	// Bind movement events
 	PlayerInputComponent->BindAxis("MoveForward", this, &AAttempt1Character::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AAttempt1Character::MoveRight);
@@ -150,7 +150,7 @@ void AAttempt1Character::OnFire()
 	}
 
 	// Try and play the sound if specified
-	
+
 	if (FireSound != NULL)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
@@ -203,7 +203,7 @@ void AAttempt1Character::MoveForward(float Value)
 {
 	if (Value != 0.0f)
 	{
-		// add movement in that direction
+		// Add movement in that direction
 		AddMovementInput(GetActorForwardVector(), Value);
 	}
 }
@@ -212,7 +212,7 @@ void AAttempt1Character::MoveRight(float Value)
 {
 	if (Value != 0.0f)
 	{
-		// add movement in that direction
+		// Add movement in that direction
 		AddMovementInput(GetActorRightVector(), Value);
 	}
 }
@@ -236,9 +236,9 @@ bool AAttempt1Character::EnableTouchscreenMovement(class UInputComponent* Player
 	{
 		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AAttempt1Character::BeginTouch);
 		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AAttempt1Character::EndTouch);
-				
+
 		return true;
 	}
-	
+
 	return false;
 }
