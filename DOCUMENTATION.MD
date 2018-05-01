@@ -6,6 +6,8 @@ My intial proposal for this project was to create a 2D game with GoDot Engine. H
 
 If I were to have more time, one of the key features I would have added was shot accuracy which would say what percent of my shot hit something.
 
+Also, not being able to use Blueprints (as they would not be graded) meant that making things like a main menu would take far more effort than normal, so yea...
+
 - TIMELINE
 
 
