@@ -14,7 +14,7 @@ class ATTEMPT1_API ACube : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	// Sets the default values for this actor's properties
 	ACube();
 
 	UPROPERTY(EditAnywhere) // Means that this component is editable on the Unreal Engine Editor
