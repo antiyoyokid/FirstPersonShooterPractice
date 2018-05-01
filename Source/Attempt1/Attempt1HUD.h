@@ -4,6 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
+#include "Engine/Canvas.h"
+#include "Engine/Texture2D.h"
+#include "TextureResource.h"
+#include "CanvasItem.h"
+#include "UObject/ConstructorHelpers.h"
 #include "Attempt1HUD.generated.h"
 
 UCLASS()

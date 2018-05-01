@@ -1,8 +1,5 @@
 
-
 #include "Comets.h"
-
-
 
 // Sets default values
 AComets::AComets()
