@@ -21,7 +21,7 @@ public:
 		UStaticMeshComponent* Mesh; // Mesh for the cube
 
 	UPROPERTY(EditAnywhere)
-		UBoxComponent* Cube; // Cube is a box component with built in box physics
+		UBoxComponent* Cube; // Box component with built in box physics
 
 	UPROPERTY(EditAnywhere)
 		float cubeSpeed = 0.0f; // Speed setter appears on Unreal Engine
